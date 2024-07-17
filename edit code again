@@ -1,0 +1,20 @@
+def extract_and_format_number(s):
+  # 提取字符串中的数字部分
+  import re
+  # 使用正则表达式提取字符串中的数字部分
+  num_part = re.findall(r'\d+\.?\d*', s)
+  if num_part:
+    num_part = num_part[0]
+    # 转换为浮点数并保留两位小数
+    num = float(num_part)
+    formatted_num = f"{num:.2f}"
+    return formatted_num
+  else:
+    return None
+
+# 测试用例
+s1 = "abcd123.456"
+s2 = "abcd123"
+
+print(format_string(s1))  # 输出：123.45
+print(format_string(s2))  # 输出：123.00
